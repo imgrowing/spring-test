@@ -1,13 +1,15 @@
 package my.ex
 
-import org.junit.jupiter.api.Test
-import org.springframework.boot.test.context.SpringBootTest
+// 이 파일이 없어도 DataJpaTest는 잘 동작한다.
 
-@SpringBootTest
-class SpringTestApplicationTests {
+//import org.junit.jupiter.api.Test
+//import org.springframework.boot.test.context.SpringBootTest
 
-    @Test
-    fun contextLoads() {
-    }
-
-}
+//@SpringBootTest
+//class SpringTestApplicationTests {
+//
+//    @Test
+//    fun contextLoads() {
+//    }
+//
+//}

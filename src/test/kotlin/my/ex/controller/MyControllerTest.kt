@@ -8,6 +8,7 @@ import my.ex.service.MyService
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
+import org.springframework.test.web.servlet.get
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
@@ -26,6 +27,17 @@ class MyControllerTest(
                 .andReturn()
                 .response
                 .contentAsString shouldBe "Hello, World!"
+    }
+
+    test("hello2") {
+        every { myService.getMessage() } returns "Hello, World!"
+
+        mockMvc.get("/hello") {
+            accept = MediaType.APPLICATION_JSON
+        }.andExpect {
+            status { isOk() }
+            content { string("Hello, World!") }
+        }
     }
 
 })
